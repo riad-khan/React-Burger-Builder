@@ -15,7 +15,7 @@ const Header = () =>{
                 </NavbarBrand>
                 <Nav className="mr-md-5">
                     <NavItem>
-                        <NavLink href="#" className="NavLink">Something</NavLink>
+                        <NavLink href="#" style={{color:"white"}} className="NavLink">Home</NavLink>
                     </NavItem>
                 </Nav>
             </Navbar>

@@ -36,7 +36,9 @@ const IngredientsControl = props =>{
                 </CardBody>
                 <CardFooter>
                     <h5>Price : {props.price} BDT</h5>
+                  
                 </CardFooter>
+                  <Button disabled={!props.purchaseAble} className="btn btn-primary" onClick={props.toggleModal}>Order</Button>
             </Card>
         </div>
     )
