@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import Burger from "./burger";
 import IngredientsControl from "../control/ingredientsControl";
-import { Modal, ModalBody,ModalHeader,ModalFooter,Buttom, Button } from "reactstrap";
+import { Modal, ModalBody,ModalHeader,ModalFooter, Button } from "reactstrap";
 import Summary from "../orderSummary/orderSummary";
+
 
 const ingredientsPrice = {
     salad : 10,
@@ -11,6 +12,7 @@ const ingredientsPrice = {
 }
 
 export default class BurgerBuilder extends Component {
+    
     state = {
         ingredients :[
             { type: 'meat', amount:0},
@@ -32,6 +34,10 @@ export default class BurgerBuilder extends Component {
         this.setState({
             purchaseAble : sum > 0
         })
+    }
+
+    checkOutRoute =() =>{
+        this.props.history.push('/checkout')
     }
 
     toggleModal = () =>{
@@ -76,7 +82,7 @@ export default class BurgerBuilder extends Component {
     }
     render(){
         return(
-            <div>
+            <div className="container">
                 <div className="d-flex flex-md-row flex-column">
                 <Burger ingredients={this.state.ingredients} />
                 <IngredientsControl 
@@ -92,11 +98,12 @@ export default class BurgerBuilder extends Component {
                         <Summary totalIngredients = {this.state.ingredients}  />
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="success" onClick={this.toggleModal}>Procced to checkout</Button>
+                        <Button color="success" onClick={this.checkOutRoute} >Procced to checkout</Button>
                         <Button color="danger" onClick={this.toggleModal}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </div>
         )
     }
-}
+};
+
