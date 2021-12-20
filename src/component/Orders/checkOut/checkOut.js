@@ -1,12 +1,13 @@
-import React from "react";
+import React,{Component} from "react";
 
-const Checkout = props =>{
-    return(
-        <div>
-            <h5>
-                Checkout
-            </h5>
-        </div>
-    )
+class Checkout extends Component {
+    render() {
+        return(
+            <div className="container">
+
+            </div>
+        )
+    }
 }
-export default Checkout;
+
+export default Checkout
