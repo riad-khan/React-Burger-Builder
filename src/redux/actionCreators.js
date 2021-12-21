@@ -19,3 +19,9 @@ export const updatePurchaseAble = ()=>{
         type : actionTypes.PURCHASEABLE
     }
 }
+
+export const resetIngredients = () =>{
+    return{
+        type:actionTypes.RESET_INGREDIENTS
+    }
+}
