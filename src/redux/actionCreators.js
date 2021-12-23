@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes'
+import axios from "axios";
 
 export const addIngredients = igtype =>{
     return{
@@ -24,4 +25,25 @@ export const resetIngredients = () =>{
     return{
         type:actionTypes.RESET_INGREDIENTS
     }
+}
+
+export const orderLoad = orders =>{
+    return{
+        type: actionTypes.ORDER_LOAD,
+        payload : orders
+    }
+}
+
+export const loadingOrder = () =>{
+    return {
+        type : actionTypes.LOADING_ORDER
+    }
+}
+
+export const fetchOrders = () =>dispatch =>{
+    axios.get("https://burger-builder-ac189-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json")
+        .then(response =>{
+             dispatch(orderLoad(response.data))
+
+        })
 }
