@@ -5,3 +5,10 @@ export const RESET_INGREDIENTS = "RESET_INGREDIENTS";
 
 export const ORDER_LOAD = "ORDER_LOAD";
 export const LOADING_ORDER = "LOADING_ORDER";
+
+// Auth action types //
+
+export const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const AUTH_LOADING = "AUTH_LOADING";
+export const AUTH_FAILED = "AUTH_FAILED";
+export const AUTH_LOGOUT = "AUTH_LOGOUT";
